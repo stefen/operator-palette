@@ -7,7 +7,7 @@ return new class extends Prose_Plugin
     public string $name = 'Operator Palette';
     public string $description = 'A control-panel-oriented backend palette for editorial and compatibility operations.';
     public string $version = '0.1.0';
-    public string $author = 'wpcompat';
+    public string $author = 'Prose Team';
 
     public function palettes(): array
     {
