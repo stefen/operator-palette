@@ -1,0 +1,16 @@
+{
+    "name": "prose/operator-palette",
+    "description": "Terminal-theme palette for Prose",
+    "keywords": [
+        "theme",
+        "palette",
+        "prose"
+    ],
+    "authors": [
+        {
+            "name": "Stefen Enns",
+            "email": "senns@pandarose.ca"
+        }
+    ],
+    "license": "MIT"
+}

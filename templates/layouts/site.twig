@@ -1,0 +1,131 @@
+{% extends '@base/layouts/site.twig' %}
+
+{% block palette_fonts %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block palette_tailwind_config %}
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ["'Space Grotesk'", "system-ui", "sans-serif"],
+                    mono: ["'JetBrains Mono'", "ui-monospace", "monospace"]
+                },
+                colors: {
+                    matrix: "#7CFF6B",
+                    terminal: "#08110d",
+                    panel: "#0f1914",
+                    signal: "#b6ff9b",
+                    ember: "#ff7a18"
+                },
+                boxShadow: {
+                    terminal: "0 0 0 1px rgba(124,255,107,0.14), 0 18px 70px rgba(0,0,0,0.55)"
+                }
+            }
+        }
+    };
+{% endblock %}
+
+{% block palette_styles %}
+    .operator-palette {
+        --prose-palette-surface: #0f1914;
+        --font-sans: "Space Grotesk", system-ui, sans-serif;
+        --font-display: "Space Grotesk", system-ui, sans-serif;
+        --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    body {
+        background:
+            radial-gradient(circle at top, rgba(124, 255, 107, 0.10), transparent 24%),
+            linear-gradient(180deg, #030604 0%, #08110d 55%, #030604 100%);
+    }
+
+    .operator-palette [class*="bg-white"],
+    .operator-palette [class*="bg-paper"],
+    .operator-palette [class*="bg-foam"],
+    .operator-palette [class*="bg-sand"],
+    .operator-palette [class*="bg-mint"],
+    .operator-palette .bg-white,
+    .operator-palette .bg-white\/75,
+    .operator-palette .bg-white\/80,
+    .operator-palette .bg-paper,
+    .operator-palette .bg-foam,
+    .operator-palette .bg-sand,
+    .operator-palette .bg-mint\/25,
+    .operator-palette .bg-mint\/30,
+    .operator-palette .bg-mint\/15,
+    .operator-palette .bg-foam\/50,
+    .operator-palette .bg-sand\/45 {
+        background: rgba(0, 0, 0, 0.22) !important;
+        color: #7CFF6B !important;
+    }
+
+    .operator-palette [class*="border-slate"],
+    .operator-palette [class*="border-white"],
+    .operator-palette .border-slate-200,
+    .operator-palette .border-slate-200\/80,
+    .operator-palette .border-white\/70,
+    .operator-palette .border-dashed {
+        border-color: rgba(124, 255, 107, 0.14) !important;
+    }
+
+    .operator-palette [class*="divide-slate"] > :not(:last-child),
+    .operator-palette [class*="divide-white"] > :not(:last-child),
+    .operator-palette [class*="divide-slate"] > :not([hidden]) ~ :not([hidden]),
+    .operator-palette [class*="divide-white"] > :not([hidden]) ~ :not([hidden]),
+    .operator-palette .divide-slate-200 > :not(:last-child),
+    .operator-palette .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+        border-color: rgba(124, 255, 107, 0.14) !important;
+    }
+
+    .operator-palette .text-coal,
+    .operator-palette .text-steel {
+        color: #b6ff9b !important;
+    }
+
+    .operator-palette .text-white {
+        color: #e8ffe1 !important;
+    }
+
+    .operator-palette .shadow-soft,
+    .operator-palette .shadow-sm,
+    .operator-palette .shadow-inner {
+        box-shadow: 0 0 0 1px rgba(124, 255, 107, 0.12), 0 20px 60px rgba(0, 0, 0, 0.45) !important;
+    }
+
+    .operator-palette input,
+    .operator-palette textarea,
+    .operator-palette select {
+        background: rgba(0, 0, 0, 0.28) !important;
+        color: #e8ffe1 !important;
+        border-color: rgba(124, 255, 107, 0.16) !important;
+    }
+
+    .operator-palette option {
+        background: #08110d;
+        color: #e8ffe1;
+    }
+
+    .operator-palette .bg-rust {
+        background: #7CFF6B !important;
+        color: #08110d !important;
+    }
+
+    .operator-palette .text-white\/75,
+    .operator-palette .text-white\/70 {
+        color: rgba(232, 255, 225, 0.76) !important;
+    }
+
+    .operator-palette .bg-coal\/95 {
+        background: rgba(3, 6, 4, 0.94) !important;
+    }
+
+    .operator-palette .hover\:bg-sand\/35:hover {
+        background: rgba(124, 255, 107, 0.05) !important;
+    }
+{% endblock %}
+
+{% block body_class %}operator-palette min-h-screen bg-terminal font-mono text-matrix{% endblock %}
